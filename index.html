@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados Automáticos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <!-- Estilos -->
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #0073e6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #0073e6;
+    }
+    table.dataTable {
+      width: 100% !important;
+      border-collapse: collapse;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background: #f1f1f1;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Resultados Automáticos
+  </header>
+
+  <main>
+    <h2>Planilha Pública do Google Sheets</h2>
+    <p style="text-align:center;color:#555;">
+      Os dados abaixo são carregados diretamente da planilha do Google.
+    </p>
+    <table id="tabela" class="display"></table>
+  </main>
+
+  <footer>
+    &copy; 2025 - Site automático integrado ao Google Sheets
+  </footer>
+
+  <script>
+    // URL da planilha (formato CSV)
+    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_jkejmvrwywqB_g1F3dSZvGNbpit-sQAdunxe8uDVDeETL_jwGeKlmNMUP3Gw2w/pub?gid=1835476885&single=true&output=csv";
+
+    // Carregar CSV e transformar em tabela
+    $(document).ready(function() {
+      $.get(sheetUrl, function(data) {
+        let linhas = data.split("\n").map(l => l.split(","));
+        let cabecalho = linhas[0];
+        let corpo = linhas.slice(1);
+
+        // Montar DataTable
+        $('#tabela').DataTable({
+          data: corpo,
+          columns: cabecalho.map(c => ({ title: c })),
+          language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"
+          },
+          pageLength: 25
+        });
+      });
+    });
+  </script>
+</body>
+</html>
