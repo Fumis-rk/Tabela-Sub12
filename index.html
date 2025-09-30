@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Resultados Automáticos</title>
+  <title>JEESP 2025 - URE ANDRADINA - SUB-12</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- jQuery -->
@@ -12,87 +12,110 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
-  <!-- Estilos -->
   <style>
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f4f6f9;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      color: #333;
+      background: #fffbea; /* fundo amarelo claro */
     }
     header {
-      background: #0073e6;
-      color: white;
-      padding: 20px;
+      background: #ffcc00; /* amarelo forte */
+      color: #333;
       text-align: center;
+      padding: 20px;
       font-size: 1.8em;
       font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
     main {
       max-width: 1200px;
       margin: 30px auto;
+      padding: 20px;
       background: #fff;
-      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     h2 {
+      color: #cc9900;
       text-align: center;
-      color: #0073e6;
+      margin-bottom: 20px;
     }
     table.dataTable {
       width: 100% !important;
-      border-collapse: collapse;
+    }
+    #filtro-local {
+      margin-bottom: 15px;
+      font-size: 1em;
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
     footer {
       text-align: center;
       padding: 15px;
       margin-top: 40px;
-      background: #f1f1f1;
+      background: #ffec99;
       font-size: 0.9em;
-      color: #666;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <header>
-    Resultados Automáticos
+    JEESP 2025 - URE ANDRADINA - SUB-12
   </header>
 
   <main>
-    <h2>Planilha Pública do Google Sheets</h2>
-    <p style="text-align:center;color:#555;">
-      Os dados abaixo são carregados diretamente da planilha do Google.
-    </p>
+    <h2>Classificação dos Jogos</h2>
+    <label for="filtro-local"><b>Filtrar por LOCAL:</b></label>
+    <select id="filtro-local">
+      <option value="">Todos</option>
+    </select>
     <table id="tabela" class="display"></table>
   </main>
 
   <footer>
-    &copy; 2025 - Site automático integrado ao Google Sheets
+    &copy; 2025 - JEESP SUB-12 - URE Andradina
   </footer>
 
   <script>
-    // URL da planilha (formato CSV)
-    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_jkejmvrwywqB_g1F3dSZvGNbpit-sQAdunxe8uDVDeETL_jwGeKlmNMUP3Gw2w/pub?gid=1835476885&single=true&output=csv";
-
-    // Carregar CSV e transformar em tabela
     $(document).ready(function() {
-      $.get(sheetUrl, function(data) {
-        let linhas = data.split("\n").map(l => l.split(","));
-        let cabecalho = linhas[0];
-        let corpo = linhas.slice(1);
+      $.ajax({
+        url: "tabela.csv", // seu arquivo CSV no repositório
+        dataType: "text",
+        success: function(data) {
+          let linhas = data.split("\n").map(l => l.split(","));
+          let cabecalho = linhas[0];
+          let corpo = linhas.slice(1);
 
-        // Montar DataTable
-        $('#tabela').DataTable({
-          data: corpo,
-          columns: cabecalho.map(c => ({ title: c })),
-          language: {
-            url: "https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"
-          },
-          pageLength: 25
-        });
+          // Descobrir em qual coluna está "LOCAL"
+          let colLocal = cabecalho.findIndex(c => c.trim().toUpperCase() === "LOCAL");
+
+          // Criar a tabela
+          let tabela = $('#tabela').DataTable({
+            data: corpo,
+            columns: cabecalho.map(c => ({ title: c })),
+            language: { url: "https://cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json" },
+            pageLength: 25
+          });
+
+          // Popular filtro LOCAL
+          let locais = [...new Set(corpo.map(l => l[colLocal]))].filter(v => v && v.trim() !== "");
+          locais.sort().forEach(local => {
+            $('#filtro-local').append(`<option value="${local}">${local}</option>`);
+          });
+
+          // Aplicar filtro no DataTable
+          $('#filtro-local').on('change', function() {
+            let valor = this.value;
+            if (valor) {
+              tabela.column(colLocal).search("^" + valor + "$", true, false).draw();
+            } else {
+              tabela.column(colLocal).search("").draw();
+            }
+          });
+        }
       });
     });
   </script>
