@@ -1,0 +1,67 @@
+LOCAL,DATA,HORA,Modalidade,Mandante,R1,X,R2,Visitante
+Ilha Solteira,04/11,7:15,FSM,Arno Hausser,,x,,Lea Silva Moraes
+Ilha Solteira,04/11,7:45,HAND,Arno Hausser,,x,,Lea Silva Moraes
+Ilha Solteira,04/11,8:15,FSM,Lea Silva Moraes,,x,,Urubupungá
+Ilha Solteira,04/11,8:45,HAND,Lea Silva Moraes,,x,,Urubupungá
+Ilha Solteira,04/11,9:15,FSM,Urubupungá,,x,,Arno Hausser
+Ilha Solteira,04/11,9:45,HAND,Urubupungá,,x,,Arno Hausser
+Ilha Solteira,04/11,10:15,Basq 3x3,Lea Silva Moraes,,x,,Urubupungá
+Ilha Solteira,04/11,10:45,FSF,Arno Hausser,,x,,Lea Silva Moraes
+Ilha Solteira,04/11,11:15,VOLEI,Lea Silva Moraes,,x,,Urubupungá
+Ilha Solteira,04/11,11:45,QUEIMADA,Arno Hausser,,x,,Lea Silva Moraes
+Ilha Solteira,04/11,12:00,QUEIMADA,Lea Silva Moraes,,x,,Urubupungá
+Ilha Solteira,04/11,12:15,QUEIMADA,Urubupungá,,x,,Arno Hausser
+Pereira Barreto,05/11,7:15,FSM,Agnes Liedtke,,x,,Mitsusada Umetani
+Pereira Barreto,05/11,7:45,FSM,Francisco Schmidt,,x,,Juventino Nogueira Ramos
+Pereira Barreto,05/11,8:10,FSF,Agnes Liedtke,,x,,Mitsusada Umetani
+Pereira Barreto,05/11,08:35,FSM,Mitsusada Umetani,,x,,Juventino Nogueira Ramos
+Pereira Barreto,05/11,9:00,FSM,Agnes Liedtke,,x,,Francisco Schmidt
+Pereira Barreto,05/11,9:25,HAND,Agnes Liedtke,,x,,Francisco Schmidt
+Pereira Barreto,05/11,9:50,FSM,Juventino Nogueira Ramos,,x,,Agnes Liedtke
+Pereira Barreto,05/11,10:15,FSM,Francisco Schmidt,,x,,Mitsusada Umetani
+Pereira Barreto,05/11,10:40,VOLEI,Mitsusada Umetani,,x,,Agnes Liedtke
+Pereira Barreto,05/11,11:15,QUEIMADA,Agnes Liedtke,,x,,Mitsusada Umetani
+Pereira Barreto,05/11,11:30,QUEIMADA,Francisco Schmidt,,x,,Juventino Nogueira Ramos
+Pereira Barreto,05/11,11:45,QUEIMADA,Mitsusada Umetani,,x,,Juventino Nogueira Ramos
+Pereira Barreto,05/11,12:00,QUEIMADA,Agnes Liedtke,,x,,Francisco Schmidt
+Pereira Barreto,05/11,12:15,QUEIMADA,Juventino Nogueira Ramos,,x,,Agnes Liedtke
+Pereira Barreto,05/11,12:30,QUEIMADA,Francisco Schmidt,,x,,Mitsusada Umetani
+Andradina,06/11,7:15,FSM,Alvaro Guião,,x,,augusto Mariani
+Andradina,06/11,7:45,FSM,João Brembatti Calvoso,,x,,Francisco Teodoro de Andrade
+Andradina,06/11,8:15,FSF,Francisco Teodoro de Andrade,,x,,augusto Mariani
+Andradina,06/11,8:45,HAND,Alvaro Guião,,x,,augusto Mariani
+Andradina,06/11,9:15,FSM,Alvaro Guião,,x,,João Brembatti Calvoso
+Andradina,06/11,9:45,FSM,Francisco Teodoro de Andrade,,x,,augusto Mariani
+Andradina,06/11,10:15,FSF,Francisco Teodoro de Andrade,,x,,augusto Mariani
+Andradina,06/11,10:45,HAND,Augusto Mariani,,x,,João Brembatti Calvoso
+Andradina,06/11,11:15,FSM,Augusto Mariani,,x,,João Brembatti Calvoso
+Andradina,06/11,11:45,FSM,Francisco Teodoro de Andrade,,x,,Alvaro Guião
+Andradina,06/11,12:15,HAND,João Brembatti Calvoso,,x,,Alvaro Guião
+Andradina,07/11,7:15,VOLEI,Alice Marques da Silva Rocha,,x,,augusto Mariani
+Andradina,07/11,7:45,VOLEI,Francisco Teodoro de Andrade,,x,,João Brembatti Calvoso
+Andradina,07/11,8:15,VOLEI,Alice Marques da Silva Rocha,,x,,Francisco Teodoro de Andrade
+Andradina,07/11,8:40,VOLEI,João Brembatti Calvoso,,x,,augusto Mariani
+Andradina,07/11,9:10,VOLEI,João Brembatti Calvoso,,x,,Alice Marques da Silva Rocha
+Andradina,07/11,9:35,VOLEI,Francisco Teodoro de Andrade,,x,,Augusto Mariani
+Andradina,07/11,10:00,QUEIMADA,Francisco Teodoro de Andrade,,x,,Alvaro Guião
+Andradina,07/11,10:15,QUEIMADA,Alice Marques da Silva Rocha,,x,,João Brembatti Calvoso
+Andradina,07/11,10:30,QUEIMADA,Augusto Mariani,,x,,Alice Marques da Silva Rocha
+Andradina,07/11,10:45,QUEIMADA,Francisco Teodoro de Andrade,,x,,João Brembatti Calvoso
+Andradina,07/11,11:00,QUEIMADA,Alvaro Guião,,x,,João Brembatti Calvoso
+Andradina,07/11,11:15,QUEIMADA,Augusto Mariani,,x,,Francisco Teodoro de Andrade
+Andradina,07/11,11:30,QUEIMADA,Alvaro Guião,,x,,Alice Marques da Silva Rocha
+Andradina,07/11,11:45,QUEIMADA,João Brembatti Calvoso,,x,,Augusto Mariani
+Andradina,07/11,12:00,QUEIMADA,Francisco Teodoro de Andrade,,x,,Alice Marques da Silva Rocha
+Andradina,07/11,12:15,QUEIMADA,Alvaro Guião,,x,,Augusto Mariani
+Castilho,11/11,7:30,FSM,Armel Miranda,,,,Dário Giometti
+Castilho,11/11,8:00,FSF,Armel Miranda,,,,Dário Giometti
+Castilho,11/11,8:30,FSM,Dário Giometti,,,,Paulo Grassi Bonilha
+Castilho,11/11,9:00,HAND,Armel Miranda,,,,Paulo Grassi Bonilha
+Castilho,11/11,9:30,FSM,Paulo Grassi Bonilha,,,,Armel Miranda
+Castilho,11/11,10:00,VOLEI,Armel Miranda,,,,Dário Giometti
+Castilho,11/11,10:30,QUEIMADA,Armel Miranda,,,,Dário Giometti
+Castilho,11/11,10:45,QUEIMADA,Dário Giometti,,,,Paulo Grassi Bonilha
+Castilho,11/11,11:00,QUEIMADA,Paulo Grassi Bonilha,,,,Armel Miranda
+FEA/Andradina,02/12,08:30,Tenis de Mesa,,,,,
+FEA/Andradina,04/12,08:30,Xadrez e Damas,,,,,
+Estádio - Andradina,05/12,08:00,Atletismo,,,,,
